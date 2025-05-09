@@ -1,11 +1,19 @@
 function mincost(arr)
 { 
+const arrayCopy=[...arr].sort((a,b)=>a-b)
   const out=[]
-  for(let i=0;i<arr.length-1;i++){
-	  let sum=arr[i]+arr[i+1]
+	let sum=arrayCopy[0]
+  for(let i=1;i<arrayCopy.length;i++){
+	   sum=sum+arrayCopy[i]
 	  out.push(sum)
   }
-return out.reduce((a,b)=>a+b)
+
+	const output=out.reduce((a,b)=>a+b)
+	alert(output)
+	
+// alert(out.reduce((a,b)=>a+b)
 }
+
+
 
 module.exports=mincost;
