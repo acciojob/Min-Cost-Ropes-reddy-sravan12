@@ -9,9 +9,7 @@ const arrayCopy=[...arr].sort((a,b)=>a-b)
   }
 
 	const output=out.reduce((a,b)=>a+b)
-	alert(output)
-	
-// alert(out.reduce((a,b)=>a+b)
+	return output
 }
 
 
