@@ -1,16 +1,18 @@
-function mincost(arr)
-{ 
-const arrayCopy=[...arr].sort((a,b)=>a-b)
-  const out=[]
-	let sum=arrayCopy[0]
-  for(let i=1;i<arrayCopy.length;i++){
-	   sum=sum+arrayCopy[i]
-	  out.push(sum)
+function mincost(arr, totalCost = 0){ 
+  if(arr.length === 1){
+    return totalCost
   }
 
-	const output=out.reduce((a,b)=>a+b)
-	return output
+  const copy = [...arr].sort((a, b) => a - b) 
+  const sum = copy[0] + copy[1]
+  totalCost += sum
+
+  const out = [sum, ...copy.slice(2)]
+
+  return mincost(out, totalCost)
 }
+
+
 
 
 
